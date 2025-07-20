@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Mahasiswa</title>
+  <style>
+    :root {
+      --bg-color: #1f1f1f;
+      --text-color: #ffffff;
+      --card-color: #2b2b2b;
+      --accent-color: #4CAF50;
+      --nav-color: #2c2c2c;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-color);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-top: 10px;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 8px 14px;
+      margin: 5px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a:hover {
+      background-color: #0ea5e9;
+      transform: scale(1.05);
+    }
+
+    nav a:active {
+      transform: scale(0.95);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    section {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      background-color: var(--card-color);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .dark-mode-toggle:hover {
+      background-color: #0ea5e9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="dark-mode-toggle" onclick="toggleMode()">🌙</button>
+
+  <header>
+    <img src="Foto.JPEG" alt="Foto Profil" class="profile-img">
+    <h1>Muhammad Arif Fauzan</h1>
+    <p>Mahasiswa Sistem Informasi</p>
+  </header>
+
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#data-diri">Data Diri</a>
+    <a href="#keluarga">Keluarga</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <section id="tentang">
+    <h2>Tentang</h2>
+    <p>Saya adalah mahasiswa jurusan Sistem Informasi yang berkuliah di universitas royal, walaupun saya sedang bekerja, pasti akan saya usahakan datang, dan mengerjain tugas-tugas yang diberi dosen, saya bersyukur bisa berkuliah di universitas royal.</p>
+  </section>
+
+  <section id="data-diri">
+    <h2>Data Diri</h2>
+    <ul>
+      <li>Nama: Muhammad Arif Fauzan</li>
+      <li>NIM: 24220422</li>
+      <li>Tempat, Tanggal Lahir: Bandung, 12 Maret 2003</li>
+      <li>Alamat: Jl. Merdeka No. 123, Bandung</li>
+    </ul>
+  </section>
+
+  <section id="keluarga">
+    <h2>Keluarga</h2>
+    <ul>
+      <li>Nama Ayah: Ahmad Maulana</li>
+      <li>Nama Ibu: Siti Nurhaliza</li>
+      <li>Jumlah Saudara: 2 (1 laki-laki, 1 perempuan)</li>
+    </ul>
+  </section>
+
+  <section id="pendidikan">
+    <h2>Pendidikan</h2>
+    <ul>
+      <li>SD Negeri 1 Bandung (2012 - 2018)</li>
+      <li>SMP Negeri 2 Bandung (2018 - 2021)</li>
+      <li>SMA Negeri 5 Bandung (2021 - 2024)</li>
+      <li>Universitas Royal - Sistem Informasi (2024 - sekarang)</li>
+    </ul>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+    <ul>
+      <li>Email: zan2408@gmail.com</li>
+      <li>Instagram: zan87824</li>
+      <li>WhatsApp: 0838-6374-1718</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Muhammad Arif Fauzan. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMode() {
+      const root = document.documentElement;
+      const currentBg = getComputedStyle(root).getPropertyValue('--bg-color').trim();
+      if (currentBg === '#1f1f1f') {
+        root.style.setProperty('--bg-color', '#ffffff');
+        root.style.setProperty('--text-color', '#000000');
+        root.style.setProperty('--card-color', '#f5f5f5');
+        root.style.setProperty('--nav-color', '#e0e0e0');
+      } else {
+        root.style.setProperty('--bg-color', '#1f1f1f');
+        root.style.setProperty('--text-color', '#ffffff');
+        root.style.setProperty('--card-color', '#2b2b2b');
+        root.style.setProperty('--nav-color', '#2c2c2c');
+      }
+    }
+  </script>
+
+</body>
+</html>
